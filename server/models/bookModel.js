@@ -1,7 +1,7 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../db");
-const Collection = require("./collectionModel");
-const Category = require("./collectionModel");
+import { DataTypes } from "sequelize";
+import sequelize from "../db.js";
+import Collection from "./collectionModel.js";
+import Category from "./categoryModel.js";
 
 const Book = sequelize.define(
   "Book",
@@ -38,4 +38,4 @@ const Book = sequelize.define(
 Book.belongsTo(Collection, { foreignKey: "book_collection_id" });
 Book.belongsTo(Category, { foreignKey: "book_cat_id" });
 
-module.exports = Book;
+export default Book;

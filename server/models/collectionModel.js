@@ -1,5 +1,5 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../db");
+import { DataTypes } from "sequelize";
+import sequelize from "../db.js";
 
 const Collection = sequelize.define(
   "Collection",
@@ -17,4 +17,4 @@ const Collection = sequelize.define(
   { tableName: "collection", timestamps: false }
 );
 
-module.exports = Collection;
+export default Collection;
