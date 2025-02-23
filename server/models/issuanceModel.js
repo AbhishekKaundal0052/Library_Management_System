@@ -1,7 +1,7 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../db");
-const Member = require("./Member");
-const Book = require("./Book");
+import { DataTypes } from "sequelize";
+import sequelize from "../db.js";
+import Member from "./memberModel.js";
+import Book from "./bookModel.js";
 
 const Issuance = sequelize.define("Issuance", {
     issuance_id: { 
@@ -38,4 +38,4 @@ const Issuance = sequelize.define("Issuance", {
 Issuance.belongsTo(Book, { foreignKey: "book_id" });
 Issuance.belongsTo(Member, { foreignKey: "issuance_member" });
 
-module.exports = Issuance;
+export default Issuance;

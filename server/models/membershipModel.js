@@ -1,6 +1,6 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../db");
-const Member = require("./memberModel");
+import { DataTypes } from "sequelize";
+import sequelize from "../db.js";
+import Member from "./memberModel.js";
 
 const Membership = sequelize.define("Membership", {
   membership_id: { 
@@ -20,4 +20,4 @@ const Membership = sequelize.define("Membership", {
 
 Membership.belongsTo(Member, { foreignKey: "member_id" });
 
-module.exports = Membership;
+export default Membership;

@@ -1,10 +1,10 @@
-const sequelize = require("../config/database");
-const Member = require("./Member");
-const Membership = require("./Membership");
-const Collection = require("./Collection");
-const Category = require("./Category");
-const Book = require("./Book");
-const Issuance = require("./Issuance");
+import sequelize from "../db.js";
+import Member from "./memberModel.js";
+import Membership from "./membershipModel.js";
+import Collection from "./collectionModel.js";
+import Category from "./categoryModel.js";
+import Book from "./bookModel.js";
+import Issuance from "./issuanceModel.js";
 
 const syncDB = async () => {
   try {
@@ -20,7 +20,7 @@ const syncDB = async () => {
 
 syncDB();
 
-module.exports = {
+export default {
   Member,
   Membership,
   Collection,
